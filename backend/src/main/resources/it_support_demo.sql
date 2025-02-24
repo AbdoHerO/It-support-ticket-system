@@ -1,3 +1,9 @@
+ALTER SESSION SET CONTAINER=XEPDB1;
+
+CREATE USER db_itsupptickets IDENTIFIED BY itsupportpass;
+GRANT CONNECT, RESOURCE, DBA TO db_itsupptickets;
+ALTER USER db_itsupptickets QUOTA UNLIMITED ON USERS;
+
 -- Adjust display settings for better readability in SQL*Plus
 SET LINESIZE 200;
 SET PAGESIZE 50;

@@ -7,10 +7,16 @@ services:
       - ORACLE_PASSWORD=itsupportpass
       - APP_USER=db_itsupptickets
       - APP_USER_PASSWORD=itsupportpass
+      # - ORACLE_DATABASE=XEPDB1  # Explicitly set default PDB
     ports:
       - "1521:1521"
-    volumes:
-      - ../backend/src/main/resources/it_support_demo.sql:/docker-entrypoint-initdb.d/it_support_demo.sql
+    # volumes:
+    #   - ./backend/src/main/resources/it_support_demo.sql:/docker-entrypoint-initdb.d/it_support_demo.sql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "connect"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
     networks:
       - app-network
 
@@ -20,13 +26,15 @@ services:
       dockerfile: Dockerfile
     container_name: it-support-backend
     depends_on:
-      - oracle-db
+      oracle-db:
+        condition: service_healthy
     ports:
       - "8080:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@oracle-db:1521/XEPDB1
       - SPRING_DATASOURCE_USERNAME=db_itsupptickets
       - SPRING_DATASOURCE_PASSWORD=itsupportpass
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     networks:
       - app-network
 
