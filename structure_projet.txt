@@ -1,0 +1,88 @@
+it-support-ticket-system
+│
+├── backend
+│   ├── ...
+│   ├── src
+│   │   ├── main
+│   │   │   ├── java
+│   │   │   │   ├── com.example.backend
+│   │   │   │   │   ├── config
+│   │   │   │   │   │   ├── SecurityConfig
+│   │   │   │   │   ├── controller
+│   │   │   │   │   │   ├── CommentController
+│   │   │   │   │   │   ├── TicketController
+│   │   │   │   │   │   ├── UserController
+│   │   │   │   │   ├── model
+│   │   │   │   │   │   ├── AuditLog
+│   │   │   │   │   │   ├── Category
+│   │   │   │   │   │   ├── Comment
+│   │   │   │   │   │   ├── Priority
+│   │   │   │   │   │   ├── Role
+│   │   │   │   │   │   ├── Status
+│   │   │   │   │   │   ├── Ticket
+│   │   │   │   │   │   ├── User
+│   │   │   │   │   ├── repository
+│   │   │   │   │   │   ├── AuditLogRepository
+│   │   │   │   │   │   ├── CommentRepository
+│   │   │   │   │   │   ├── TicketRepository
+│   │   │   │   │   │   ├── UserRepository
+│   │   │   │   │   ├── security
+│   │   │   │   │   │   ├── CustomUserDetails
+│   │   │   │   │   │   ├── CustomUserDetailsService
+│   │   │   │   │   ├── service
+│   │   │   │   │   │   ├── CommentService
+│   │   │   │   │   │   ├── TicketService
+│   │   │   │   │   ├── BackendApplication
+│   │   │   ├── resources
+│   │   │   │   ├── static
+│   │   │   │   ├── templates
+│   │   │   │   ├── application.properties
+│   │   │   │   ├── it_support_demo.sql
+│   │   │   │   ├── sql.sql
+│   ├── test
+│   │   │   ├── java
+│   │   │   │   ├── com.example.backend
+│   │   │   │   │   ├── BackendApplicationTests
+│   │   │   │   │   ├── TicketServiceTest
+│   ├── target
+│   │   ├── ...
+│   ├── .gitignore
+│   ├── pom.xml
+│
+├── frontend
+│   ├── ...
+│   ├── src
+│   │   ├── main
+│   │   │   ├── java
+│   │   │   │   ├── com.example.frontend
+│   │   │   │   │   ├── client
+│   │   │   │   │   │   ├── model
+│   │   │   │   │   │   │   ├── AuditLog
+│   │   │   │   │   │   │   ├── Comment
+│   │   │   │   │   │   │   ├── Ticket
+│   │   │   │   │   │   │   ├── User
+│   │   │   │   │   │   ├── CreateTicketDialog
+│   │   │   │   │   │   ├── HttpUtil
+│   │   │   │   │   │   ├── LoginDialog
+│   │   │   │   │   │   ├── Main
+│   │   │   │   │   │   ├── MainFrame
+│   │   │   │   │   │   ├── SearchDialog
+│   │   │   │   │   │   ├── TicketDetailsDialog
+│   │   │   │   │   │   ├── TicketListPanel
+│   │   │   │   │   ├── FrontendApplication
+│   │   │   ├── resources
+│   │   │   │   ├── application.properties
+│   ├── test
+│   ├── target
+│   │   ├── ...
+│   ├── .gitignore
+│   ├── pom.xml
+│
+├── src
+│   ├── ...
+├── pom.xml
+│
+├── docker
+│   ├── Dockerfile          <- Docker build instructions for the backend
+│   ├── docker-compose.yml  <- References Oracle image + your backend container
+├── ...
