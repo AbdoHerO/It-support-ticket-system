@@ -24,6 +24,7 @@ public class Ticket {
     @Enumerated(EnumType.STRING)
     private Category category;
 
+    @Column(name = "CREATION_DATE")
     private LocalDateTime creationDate;
 
     @Enumerated(EnumType.STRING)

@@ -15,6 +15,7 @@ public class Comment {
 
     private String content;
 
+    @Column(name = "\"CREATED_AT\"")
     private LocalDateTime createdAt;
 
     @ManyToOne

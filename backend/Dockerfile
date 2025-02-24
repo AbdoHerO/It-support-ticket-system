@@ -8,13 +8,8 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/backend-0.0.1-SNAPSHOT.jar app.jar
-
-# Install necessary tools
 RUN apk add --no-cache netcat-openbsd bash
-
-# Create a startup script
 COPY src/main/resources/wait-for-oracle.sh /wait-for-oracle.sh
 RUN chmod +x /wait-for-oracle.sh
-
 EXPOSE 8080
 ENTRYPOINT ["/wait-for-oracle.sh"]
