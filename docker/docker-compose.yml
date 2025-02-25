@@ -9,7 +9,8 @@ services:
     ports:
       - "1521:1521"
     volumes:
-      - ./init:/docker-entrypoint-initdb.d/
+      - oracle-data:/opt/oracle/oradata 
+      - ./init:/docker-entrypoint-initdb.d/  
     networks:
       - app-network
 
@@ -29,6 +30,9 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     networks:
       - app-network
+
+volumes:
+  oracle-data:  # Define the persistent volume
 
 networks:
   app-network:
