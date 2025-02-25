@@ -34,6 +34,7 @@ This project is a simple IT Support Ticket management application. It consists o
 it-support-ticket-system
 │
 ├── backend
+│   ├── `Dockerfile` - Backend container setup
 │   ├── **Spring Boot Backend** (Java 17, REST API)
 │   ├── `config/` - Security & app configuration
 │   ├── `controller/` - API endpoints (Users, Tickets, Comments)
@@ -51,7 +52,7 @@ it-support-ticket-system
 │   ├── `MainFrame.java` - Main UI window
 │
 ├── docker
-│   ├── `Dockerfile` - Backend container setup
+│   ├── `init/` - contain the initialization scripts for the Oracle DB
 │   ├── `docker-compose.yml` - Backend + Oracle DB setup
 │
 ├── README.md - Project documentation

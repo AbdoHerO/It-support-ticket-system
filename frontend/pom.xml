@@ -61,17 +61,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.7.1</version> <!-- Updated to latest stable version -->
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>com.example.frontend.client.Main</mainClass>
-						</manifest>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
+				<version>3.7.1</version>
 				<executions>
 					<execution>
 						<id>make-assembly</id>
@@ -79,9 +69,28 @@
 						<goals>
 							<goal>single</goal>
 						</goals>
+						<configuration>
+							<archive>
+								<manifest>
+										<mainClass>com.example.frontend.client.Main</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<layout>NONE</layout>  <!-- Prevents Spring Boot from restructuring JAR -->
+				</configuration>
+			</plugin>
+
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
