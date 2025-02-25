@@ -1,6 +1,7 @@
 it-support-ticket-system
 │
 ├── backend
+│   ├── `Dockerfile` - Backend container setup
 │   ├── ...
 │   ├── src
 │   │   ├── main
@@ -37,6 +38,8 @@ it-support-ticket-system
 │   │   │   │   ├── static
 │   │   │   │   ├── templates
 │   │   │   │   ├── application.properties
+│   │   │   │   ├── init.sql
+│   │   │   │   ├── wait-for-oracle.sh
 │   │   │   │   ├── it_support_demo.sql
 │   │   │   │   ├── sql.sql
 │   ├── test
@@ -77,12 +80,11 @@ it-support-ticket-system
 │   │   ├── ...
 │   ├── .gitignore
 │   ├── pom.xml
+├── docker
+│   ├── `docker-compose.yml` - Backend + Oracle DB setup
 │
 ├── src
 │   ├── ...
 ├── pom.xml
 │
-├── docker
-│   ├── Dockerfile          <- Docker build instructions for the backend
-│   ├── docker-compose.yml  <- References Oracle image + your backend container
 ├── ...
