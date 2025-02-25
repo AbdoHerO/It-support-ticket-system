@@ -127,9 +127,11 @@ public class MainFrame extends JFrame {
         gbc.gridy = 0;
         gbc.insets = new Insets(10, 10, 10, 10);
 
-        JButton createTicketBtn = new JButton("Create Ticket");
-        createTicketBtn.addActionListener(e -> showCreateTicketDialog());
-        shortcuts.add(createTicketBtn, gbc);
+        if (role == User.Role.EMPLOYEE) {
+            JButton createTicketBtn = new JButton("Create Ticket");
+            createTicketBtn.addActionListener(e -> showCreateTicketDialog());
+            shortcuts.add(createTicketBtn, gbc);
+        }
 
         if (role == User.Role.EMPLOYEE) {
             gbc.gridy++;
